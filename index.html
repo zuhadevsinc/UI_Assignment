@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MNTN - Mountain Adventure</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
     <style>
       .bg-image-1 {
         background-image: url("/images/1.png");
@@ -134,8 +136,11 @@
         class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#0B1D26]/5 to-[#0B1D26]"
       ></div>
       <div class="max-w-6xl mx-auto space-y-40">
-        <div class="grid md:grid-cols-2 gap-28 items-center relative">
-          <div class="relative left-16">
+        <div
+          class="grid md:grid-cols-2 gap-28 items-center relative"
+          data-aos="fade-up"
+        >
+          <div class="relative left-16" data-aos="fade-right">
             <span
               class="absolute top-[-8rem] left-[-5rem] text-[10rem] font-bold text-gray-600/20 select-none"
               >01</span
@@ -163,7 +168,7 @@
             >
           </div>
 
-          <div class="relative w-[466px] h-[550px]">
+          <div class="relative w-[466px] h-[550px]" data-aos="fade-left">
             <img
               src="/images/person1.png"
               alt="Hiking"
@@ -172,15 +177,21 @@
           </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-12 items-center relative">
-          <div class="relative order-2 md:order-1 w-[500px] h-[550px]">
+        <div
+          class="grid md:grid-cols-2 gap-12 items-center relative"
+          data-aos="fade-up"
+        >
+          <div
+            class="relative order-2 md:order-1 w-[500px] h-[550px]"
+            data-aos="fade-right"
+          >
             <img
               src="/images/person2.jpg"
               alt="Gear"
               class="shadow-lg w-full h-full object-cover"
             />
           </div>
-          <div class="relative order-1 md:order-2 left-16">
+          <div class="relative order-1 md:order-2 left-16" data-aos="fade-left">
             <span
               class="absolute top-[-8rem] left-[-5rem] text-[10rem] font-bold text-gray-600/20 select-none"
               >02</span
@@ -208,8 +219,11 @@
           </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-28 items-center relative">
-          <div class="relative left-16">
+        <div
+          class="grid md:grid-cols-2 gap-28 items-center relative"
+          data-aos="fade-up"
+        >
+          <div class="relative left-16" data-aos="fade-right">
             <span
               class="absolute top-[-8rem] left-[-5rem] text-[10rem] font-bold text-gray-600/20 select-none"
               >03</span
@@ -236,7 +250,7 @@
             >
           </div>
 
-          <div class="relative w-[466px] h-[550px]">
+          <div class="relative w-[466px] h-[550px]" data-aos="fade-left">
             <img
               src="/images/person3.png"
               alt="Map"
@@ -314,4 +328,11 @@
       </div>
     </footer>
   </body>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
 </html>
