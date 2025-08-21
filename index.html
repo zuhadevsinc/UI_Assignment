@@ -22,12 +22,21 @@
         object-fit: contain;
         background-repeat: no-repeat;
       }
+      @font-face {
+        font-family: "Chronicle Display";
+        src: url("/Font/Chronicle-Display-Semibold.otf") format("opentype");
+        font-weight: 700;
+      }
+
+      .font-chronicle {
+        font-family: "Chronicle Display", serif;
+      }
     </style>
   </head>
-  <body class="overflow-x-hidden bg-blacks">
+  <body class="overflow-x-hidden bg-[#0B1D26]">
     <nav class="fixed top-0 left-0 right-0 z-50 p-6">
       <div class="flex justify-between items-center">
-        <div class="text-white text-2xl font-bold">MNTN</div>
+        <div class="text-white text-2xl font-chronicle font-bold">MNTN</div>
         <div class="hidden md:flex space-x-8 text-white">
           <a href="#" class="hover:text-amber-300 transition-colors"
             >Equipment</a
@@ -44,7 +53,7 @@
       </div>
     </nav>
 
-    <div class="relative min-h-screen min-w-screen bg-black">
+    <div class="relative min-h-screen min-w-screen">
       <div class="absolute inset-0 bg-image-1"></div>
       <div class="absolute inset-0 bg-image-2"></div>
       <div class="absolute inset-0 bg-image-3"></div>
@@ -63,7 +72,7 @@
           </div>
 
           <h1
-            class="text-5xl md:text-7xl font-bold mb-8 leading-tight text-left"
+            class="text-5xl md:text-7xl font-chronicle font-bold mb-8 leading-tight text-left"
           >
             Be Prepared For The<br />
             Mountains And Beyond!
@@ -105,139 +114,144 @@
       <div
         class="fixed right-6 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block"
       >
-        <div class="text-white text-right mb-4">
-          <div class="text-sm mb-2">Start</div>
-          <div class="text-2xl font-bold">01</div>
-          <div class="w-px h-16 bg-white opacity-50 ml-auto mt-2"></div>
-          <div class="text-sm mt-2 opacity-60">02</div>
-          <div class="text-sm mt-2 opacity-60">03</div>
+        <div class="flex items-center">
+          <div class="text-white text-left mr-4">
+            <div class="text-md mb-6">Start</div>
+            <div class="text-xl opacity-60 mb-6">01</div>
+            <div class="text-xl opacity-60 mb-6">02</div>
+            <div class="text-xl opacity-60">03</div>
+          </div>
+
+          <div class="w-[2px] h-48 bg-white/50"></div>
         </div>
       </div>
     </div>
 
-    <div class="bg-[#0f1c24] text-white py-16 px-6 md:px-12 absolute top-50 right-0 left-0 z-30">
+    <div
+      class="relative mt-[-10rem] z-30 bg-[#0B1D26]/20 text-white py-16 px-6 md:px-12"
+    >
+      <div
+        class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#0B1D26]/5 to-[#0B1D26]"
+      ></div>
       <div class="max-w-6xl mx-auto space-y-40">
-        <!-- Card 1 -->
         <div class="grid md:grid-cols-2 gap-28 items-center relative">
-          <!-- Image -->
-          <div class="relative  w-[566px] h-[720px]">
-            <img
-              src="/images/person1.png"
-              alt="Hiking"
-              class="rounded-lg shadow-lg w-full h-full"
-            />
-          </div>
-          <!-- Text -->
-          <div class="relative">
+          <div class="relative left-16">
             <span
-              class="absolute -top-12 -left-6 text-[8rem] font-bold text-gray-600/20 select-none"
+              class="absolute top-[-8rem] left-[-5rem] text-[10rem] font-bold text-gray-600/20 select-none"
               >01</span
             >
             <p
-              class="text-yellow-400 uppercase tracking-widest text-sm font-semibold"
+              class="text-[#FBD784] uppercase tracking-widest text-sm font-semibold"
             >
               Planning
             </p>
-            <h2 class="text-3xl md:text-4xl font-bold mt-2">
-              Choose Your Destination
+            <h2 class="text-3xl md:text-4xl font-chronicle font-bold mt-2">
+              What level of hiker are you?
             </h2>
             <p class="mt-4 text-gray-300 leading-relaxed">
-              Picking the right trail is key to an enjoyable hike. Research the
-              route, difficulty level, and check weather conditions. Be sure to
-              match the hike to your fitness level and experience.
+              Determining what level of hiker you are can be an important tool
+              when planning future hikes. This hiking level guide will help you
+              plan hikes according to different hike ratings set by various
+              websites like All Trails and Modern Hiker. What type of hiker are
+              you - novice, moderate, advanced moderate, expert, or expert
+              backpacker?
             </p>
             <a
               href="#"
-              class="mt-6 inline-block text-yellow-400 font-medium hover:underline"
+              class="mt-6 inline-block text-[#FBD784] font-medium hover:underline"
               >read more →</a
             >
+          </div>
+
+          <div class="relative w-[466px] h-[550px]">
+            <img
+              src="/images/person1.png"
+              alt="Hiking"
+              class="shadow-lg w-full h-full object-cover"
+            />
           </div>
         </div>
 
-        <!-- Card 2 (reverse layout) -->
         <div class="grid md:grid-cols-2 gap-12 items-center relative">
-          <!-- Text -->
-          <div class="relative order-2 md:order-1">
-            <span
-              class="absolute -top-12 -left-6 text-[8rem] font-bold text-gray-600/20 select-none"
-              >02</span
-            >
-            <p
-              class="text-yellow-400 uppercase tracking-widest text-sm font-semibold"
-            >
-              Hiking Essentials
-            </p>
-            <h2 class="text-3xl md:text-4xl font-bold mt-2">
-              Picking the Right Hiking Gear
-            </h2>
-            <p class="mt-4 text-gray-300 leading-relaxed">
-              The nice thing about beginning hiking is that you don’t really
-              need any special gear — you can probably get away with things you
-              already have. Just make sure to wear comfortable shoes and bring
-              water.
-            </p>
-            <a
-              href="#"
-              class="mt-6 inline-block text-yellow-400 font-medium hover:underline"
-              >read more →</a
-            >
-          </div>
-          <!-- Image -->
-          <div class="relative order-1 md:order-2 w-[566px] h-[620px]">
+          <div class="relative order-2 md:order-1 w-[500px] h-[550px]">
             <img
               src="/images/person2.jpg"
               alt="Gear"
-              class="rounded-lg shadow-lg w-full h-full"
+              class="shadow-lg w-full h-full object-cover"
             />
           </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="grid md:grid-cols-2 gap-28 items-center relative">
-          <!-- Image -->
-          <div class="relative w-[566px] h-[620px]">
-            <img
-              src="/images/person3.png"
-              alt="Map"
-              class="rounded-lg shadow-lg w-full h-full"
-            />
-          </div>
-          <!-- Text -->
-          <div class="relative">
+          <div class="relative order-1 md:order-2 left-16">
             <span
-              class="absolute -top-12 -left-6 text-[8rem] font-bold text-gray-600/20 select-none"
-              >03</span
+              class="absolute top-[-8rem] left-[-5rem] text-[10rem] font-bold text-gray-600/20 select-none"
+              >02</span
             >
             <p
-              class="text-yellow-400 uppercase tracking-widest text-sm font-semibold"
+              class="text-[#FBD784] uppercase tracking-widest text-sm font-semibold"
             >
-              Where You Go is the Key
+              Hiking Essentials
             </p>
-            <h2 class="text-3xl md:text-4xl font-bold mt-2">
-              Understand Your Map & Timing
+            <h2 class="text-3xl md:text-4xl font-chronicle font-bold mt-2">
+              Picking the right Hiking Gear!
             </h2>
             <p class="mt-4 text-gray-300 leading-relaxed">
-              To start, print out the hiking guide and map. If it’s raining,
-              keep them in a Zip-Lock bag. Study the map and have a good idea of
-              what to expect. It’s always better to know the landmarks before
-              you head out.
+              The nice thing about beginning hiking is that you don't really
+              need any special gear, you can probably get away with things you
+              already have. Let's start with clothing. A typical mistake hiking
+              beginners make is wearing jeans and regular clothes, which will
+              get heavy and chafe wif they get sweaty or wet.
             </p>
             <a
               href="#"
-              class="mt-6 inline-block text-yellow-400 font-medium hover:underline"
+              class="mt-6 inline-block text-[#FBD784] font-medium hover:underline"
               >read more →</a
             >
           </div>
         </div>
-      </div>
-    </section>
 
-    <footer class="bg-[#0f1c24] text-gray-300 py-12  mt-20">
-      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-        <!-- Left section -->
+        <div class="grid md:grid-cols-2 gap-28 items-center relative">
+          <div class="relative left-16">
+            <span
+              class="absolute top-[-8rem] left-[-5rem] text-[10rem] font-bold text-gray-600/20 select-none"
+              >03</span
+            >
+            <p
+              class="text-[#FBD784] uppercase tracking-widest text-sm font-semibold"
+            >
+              Where You Go is the Key
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold mt-2 font-chronicle">
+              Understand Your Map & Timing
+            </h2>
+            <p class="mt-4 text-gray-300 leading-relaxed">
+              To start, print out the hiking guide and map. If it's raining,
+              throw them in a Zip-Lock bag. Read over the guide, study the map,
+              and have a good idea of what to expect. I like to know what my
+              next landmark is as I hike. For example, I'll read the guide and
+              know that say, in a mile, I make a right turn at the junction..
+            </p>
+            <a
+              href="#"
+              class="mt-6 inline-block text-[#FBD784] font-medium hover:underline"
+              >read more →</a
+            >
+          </div>
+
+          <div class="relative w-[466px] h-[550px]">
+            <img
+              src="/images/person3.png"
+              alt="Map"
+              class="shadow-lg w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-[#0B1D26] text-gray-300 py-12 mt-20">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-[20rem]">
         <div>
-          <h2 class="text-white font-bold text-lg">MNTN</h2>
-          <p class="mt-3 text-sm leading-relaxed">
+          <h2 class="text-white font-chronicle font-bold text-lg">MNTN</h2>
+          <p class="mt-3 text-sm leading-relaxed max-w-xs">
             Get out there & discover your next <br />
             slope, mountain & destination!
           </p>
@@ -246,56 +260,56 @@
           </p>
         </div>
 
-        <!-- Middle section -->
-        <div>
-          <h3 class="text-yellow-400 font-semibold text-sm uppercase">
-            More on The Blog
-          </h3>
-          <ul class="mt-4 space-y-3">
-            <li>
-              <a href="#" class="hover:text-yellow-400 transition"
-                >About MNTN</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-yellow-400 transition"
-                >Contributors & Writers</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-yellow-400 transition"
-                >Write For Us</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-yellow-400 transition"
-                >Contact Us</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-yellow-400 transition"
-                >Privacy Policy</a
-              >
-            </li>
-          </ul>
-        </div>
+        <div class="grid grid-cols-2 gap-12 justify-end">
+          <div>
+            <h3 class="text-[#FBD784] font-semibold text-sm uppercase">
+              More on The Blog
+            </h3>
+            <ul class="mt-4 space-y-3">
+              <li>
+                <a href="#" class="hover:text-[#FBD784] transition"
+                  >About MNTN</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#FBD784] transition"
+                  >Contributors & Writers</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#FBD784] transition"
+                  >Write For Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#FBD784] transition"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#FBD784] transition"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
 
-        <!-- Right section -->
-        <div>
-          <h3 class="text-yellow-400 font-semibold text-sm uppercase">
-            More on MNTN
-          </h3>
-          <ul class="mt-4 space-y-3">
-            <li>
-              <a href="#" class="hover:text-yellow-400 transition">The Team</a>
-            </li>
-            <li>
-              <a href="#" class="hover:text-yellow-400 transition">Jobs</a>
-            </li>
-            <li>
-              <a href="#" class="hover:text-yellow-400 transition">Press</a>
-            </li>
-          </ul>
+          <div>
+            <h3 class="text-[#FBD784] font-semibold text-sm uppercase">
+              More on MNTN
+            </h3>
+            <ul class="mt-4 space-y-3">
+              <li>
+                <a href="#" class="hover:text-[#FBD784] transition">The Team</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#FBD784] transition">Jobs</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#FBD784] transition">Press</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>
