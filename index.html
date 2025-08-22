@@ -10,36 +10,69 @@
     <style>
       .bg-image-1 {
         background-image: url("/images/1.png");
-        object-fit: contain;
+        background-size: cover;
         background-repeat: no-repeat;
       }
       .bg-image-2 {
         background-image: url("/images/2.png");
-        object-fit: contain;
+        background-size: cover;
         background-repeat: no-repeat;
+        margin-top: 15rem;
       }
       .bg-image-3 {
         background-image: url("/images/3.png");
-        margin-top: 44rem;
-        object-fit: contain;
+        background-size: cover;
         background-repeat: no-repeat;
+        margin-top: 35rem;
+      }
+      @media (max-width: 768px) {
+        .bg-image-3 {
+          margin-top: 20rem;
+        }
       }
       @font-face {
         font-family: "Chronicle Display";
         src: url("/Font/Chronicle-Display-Semibold.otf") format("opentype");
         font-weight: 700;
       }
-
       .font-chronicle {
         font-family: "Chronicle Display", serif;
+      }
+
+      .progress-line {
+        position: relative;
+        background: rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .progress-fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        transition: height 0.6s ease;
+      }
+
+      .progress-number {
+        transition: all 0.3s ease;
+      }
+
+      .progress-number.active {
+        opacity: 1 !important;
+        color: #ffffff;
       }
     </style>
   </head>
   <body class="overflow-x-hidden bg-[#0B1D26]">
-    <nav class="fixed top-0 left-0 right-0 z-50 p-6">
+    <nav class="fixed top-0 left-0 right-0 z-50 p-4 md:p-6 lg:p-10">
       <div class="flex justify-between items-center">
-        <div class="text-white text-2xl font-chronicle font-bold">MNTN</div>
-        <div class="hidden md:flex space-x-8 text-white">
+        <div class="text-white text-xl md:text-2xl font-chronicle font-bold">
+          MNTN
+        </div>
+        <div
+          class="hidden md:flex space-x-6 lg:space-x-8 text-white text-sm lg:text-base"
+        >
           <a href="#" class="hover:text-amber-300 transition-colors"
             >Equipment</a
           >
@@ -48,44 +81,49 @@
           >
           <a href="#" class="hover:text-amber-300 transition-colors">Blog</a>
         </div>
-        <div class="text-white flex items-center space-x-2">
-          <img src="/images/account.png" alt="" />
-          <span>Account</span>
+        <div
+          class="text-white flex items-center space-x-2 text-sm lg:text-base"
+        >
+          <img src="/images/account.png" alt="" class="w-5 h-5" />
+          <span class="hidden sm:inline">Account</span>
         </div>
       </div>
     </nav>
 
-    <div class="relative min-h-screen min-w-screen">
+    <div class="relative min-h-screen">
       <div class="absolute inset-0 bg-image-1"></div>
       <div class="absolute inset-0 bg-image-2"></div>
       <div class="absolute inset-0 bg-image-3"></div>
 
       <div
-        class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40"
+        class="absolute inset-0 bg-gradient-to-b from-[#0B1D26]/30 via-[#0B1D26]/10 to-[#0B1D26]"
       ></div>
 
-      <div class="relative z-10 flex items-center justify-center min-h-screen">
-        <div class="text-center text-white px-6">
-          <div class="inline-flex items-center space-x-2 mb-6 w-full">
-            <div class="w-16 h-0.5 bg-amber-300"></div>
-            <span class="text-amber-300 text-sm tracking-wider uppercase"
+      <div
+        class="relative z-10 flex items-center justify-center min-h-screen px-4 md:px-6 mt-[-2rem]"
+      >
+        <div class="text-center md:text-left text-white max-w-4xl mx-auto">
+          <div class="inline-flex items-center space-x-2 mb-4 md:mb-6">
+            <div class="w-12 md:w-16 h-0.5 bg-amber-300"></div>
+            <span
+              class="text-amber-300 text-xs md:text-sm tracking-wider uppercase"
               >A Hiking Guide</span
             >
           </div>
 
           <h1
-            class="text-5xl md:text-7xl font-chronicle font-bold mb-8 leading-tight text-left"
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-chronicle font-bold mb-6 md:mb-8 leading-tight"
           >
-            Be Prepared For The<br />
+            Be Prepared For The<br class="hidden sm:block" />
             Mountains And Beyond!
           </h1>
 
-          <div class="flex items-center mt-2 w-full gap-2">
-            <span class="text-sm tracking-wider mb-4 text-left"
-              >scroll down</span
-            >
+          <div
+            class="flex items-center justify-center md:justify-start gap-2 mt-4"
+          >
+            <span class="text-xs md:text-sm tracking-wider">scroll down</span>
             <svg
-              class="w-6 h-6 animate-bounce"
+              class="w-4 h-4 md:w-6 md:h-6 animate-bounce"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -102,13 +140,13 @@
       </div>
 
       <div
-        class="fixed left-6 top-1/2 transform rotate-90 z-40 hidden lg:block"
+        class="fixed left-6 top-1/2 transform rotate-90 z-40 hidden xl:block"
       >
         <div class="flex items-center space-x-4 text-white text-sm">
           <span class="tracking-wider">Follow us</span>
           <div class="flex space-x-2">
-            <img src="/images/instagram.png" alt="" />
-            <img src="/images/twitter.png" alt="" />
+            <img src="/images/instagram.png" class="w-4 h-4" />
+            <img src="/images/twitter.png" class="w-4 h-4" />
           </div>
         </div>
       </div>
@@ -117,46 +155,68 @@
         class="fixed right-6 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block"
       >
         <div class="flex items-center">
-          <div class="text-white text-left mr-4">
-            <div class="text-md mb-6">Start</div>
-            <div class="text-xl opacity-60 mb-6">01</div>
-            <div class="text-xl opacity-60 mb-6">02</div>
-            <div class="text-xl opacity-60">03</div>
+          <div class="text-white text-right mr-4">
+            <div class="text-sm mb-6">Start</div>
+            <div
+              class="text-lg opacity-60 mb-6 progress-number"
+              id="progress-01"
+            >
+              01
+            </div>
+            <div
+              class="text-lg opacity-60 mb-6 progress-number"
+              id="progress-02"
+            >
+              02
+            </div>
+            <div class="text-lg opacity-60 progress-number" id="progress-03">
+              03
+            </div>
           </div>
-
-          <div class="w-[2px] h-48 bg-white/50"></div>
+          <div class="w-[2px] h-32 md:h-48 progress-line">
+            <div
+              class="progress-fill"
+              id="progress-fill"
+              style="height: 0%"
+            ></div>
+          </div>
         </div>
       </div>
     </div>
 
     <div
-      class="relative mt-[-10rem] z-30 bg-[#0B1D26]/20 text-white py-16 px-6 md:px-12"
+      class="relative z-30 bg-[#0B1D26] text-white py-8 md:py-16 px-4 md:px-6 lg:px-12"
     >
-      <div
-        class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#0B1D26]/5 to-[#0B1D26]"
-      ></div>
-      <div class="max-w-6xl mx-auto space-y-40">
+      <div class="max-w-6xl mx-auto space-y-16 md:space-y-32 lg:space-y-40">
         <div
-          class="grid md:grid-cols-2 gap-28 items-center relative"
+          class="grid lg:grid-cols-2 gap-8 lg:gap-28 items-center section-card"
           data-aos="fade-up"
+          data-section="1"
         >
-          <div class="relative left-16" data-aos="fade-right">
+          <div class="order-2 lg:order-1 text-center lg:text-left">
             <span
-              class="absolute top-[-8rem] left-[-5rem] text-[10rem] font-bold text-gray-600/20 select-none"
+              class="hidden lg:block absolute text-6xl md:text-8xl lg:text-[10rem] font-bold text-gray-600/20 select-none -mt-16 lg:-mt-32 -ml-8 lg:-ml-20"
               >01</span
             >
-            <div class="flex gap-2">
-              <hr class="bg-[#FBD784] w-16 h-0.5 self-center" />
+
+            <div
+              class="flex items-center justify-center lg:justify-start gap-2 mb-4"
+            >
+              <hr class="bg-[#FBD784] w-8 md:w-12 lg:w-16 h-0.5" />
               <p
-                class="text-[#FBD784] uppercase tracking-widest text-sm font-semibold"
+                class="text-[#FBD784] uppercase tracking-widest text-xs md:text-sm font-semibold"
               >
                 Get Started
               </p>
             </div>
-            <h2 class="text-3xl md:text-4xl font-chronicle font-bold mt-2">
+
+            <h2
+              class="text-2xl md:text-3xl lg:text-4xl font-chronicle font-bold mb-4"
+            >
               What level of hiker are you?
             </h2>
-            <p class="mt-4 text-gray-300 leading-relaxed">
+
+            <p class="text-gray-300 leading-relaxed mb-6 text-sm md:text-base">
               Determining what level of hiker you are can be an important tool
               when planning future hikes. This hiking level guide will help you
               plan hikes according to different hike ratings set by various
@@ -164,206 +224,231 @@
               you - novice, moderate, advanced moderate, expert, or expert
               backpacker?
             </p>
-            <div class="flex items-center w-full h-full gap-4">
+
+            <div
+              class="flex items-center justify-center lg:justify-start gap-2"
+            >
               <a
                 href="#"
-                class="mt-6 inline-block text-[#FBD784] font-medium hover:underline"
-                >read more
-              </a>
-              <img
-                src="/images/arrow.png"
-                alt=""
-                class="self-center h-full mt-6"
-              />
+                class="text-[#FBD784] font-medium hover:underline text-sm md:text-base"
+                >read more</a
+              >
+              <img src="/images/arrow.png" class="w-4 h-4" />
             </div>
           </div>
 
-          <div class="relative w-[466px] h-[550px]" data-aos="fade-left">
-            <img
-              src="/images/01.svg"
-              alt="Hiking"
-              class="shadow-lg w-full h-full object-cover"
-            />
+          <div
+            class="order-1 lg:order-2 flex justify-center"
+            data-aos="fade-left"
+          >
+            <div class="w-full max-w-md lg:max-w-lg">
+              <img
+                src="/images/01.svg"
+                alt="Hiking"
+                class="w-full h-auto shadow-lg"
+              />
+            </div>
           </div>
         </div>
 
         <div
-          class="grid md:grid-cols-2 gap-12 items-center relative"
+          class="grid lg:grid-cols-2 gap-8 lg:gap-28 items-center section-card"
           data-aos="fade-up"
+          data-section="2"
         >
-          <div
-            class="relative order-2 md:order-1 w-[500px] h-[550px]"
-            data-aos="fade-right"
-          >
-            <img
-              src="/images/2.svg"
-              alt="Gear"
-              class="shadow-lg w-full h-full object-cover"
-            />
+          <div class="order-1 flex justify-center" data-aos="fade-right">
+            <div class="w-full max-w-md lg:max-w-lg">
+              <img src="/images/2.svg" class="w-full h-auto shadow-lg" />
+            </div>
           </div>
-          <div class="relative order-1 md:order-2 left-16" data-aos="fade-left">
+
+          <div class="order-2 text-center lg:text-left">
             <span
-              class="absolute top-[-8rem] left-[-5rem] text-[10rem] font-bold text-gray-600/20 select-none"
+              class="hidden lg:block absolute text-6xl md:text-8xl lg:text-[10rem] font-bold text-gray-600/20 select-none -mt-16 lg:-mt-32 -ml-8 lg:-ml-20"
               >02</span
             >
-            <div class="flex gap-2">
-              <hr class="bg-[#FBD784] w-16 h-0.5 self-center" />
+
+            <div
+              class="flex items-center justify-center lg:justify-start gap-2 mb-4"
+            >
+              <hr class="bg-[#FBD784] w-8 md:w-12 lg:w-16 h-0.5" />
               <p
-                class="text-[#FBD784] uppercase tracking-widest text-sm font-semibold"
+                class="text-[#FBD784] uppercase tracking-widest text-xs md:text-sm font-semibold"
               >
                 Hiking Essentials
               </p>
             </div>
 
-            <h2 class="text-3xl md:text-4xl font-chronicle font-bold mt-2">
+            <h2
+              class="text-2xl md:text-3xl lg:text-4xl font-chronicle font-bold mb-4"
+            >
               Picking the right Hiking Gear!
             </h2>
-            <p class="mt-4 text-gray-300 leading-relaxed">
+
+            <p class="text-gray-300 leading-relaxed mb-6 text-sm md:text-base">
               The nice thing about beginning hiking is that you don't really
               need any special gear, you can probably get away with things you
               already have. Let's start with clothing. A typical mistake hiking
               beginners make is wearing jeans and regular clothes, which will
-              get heavy and chafe wif they get sweaty or wet.
+              get heavy and chafe if they get sweaty or wet.
             </p>
-            <div class="flex items-center w-full h-full gap-4">
+
+            <div
+              class="flex items-center justify-center lg:justify-start gap-2"
+            >
               <a
                 href="#"
-                class="mt-6 inline-block text-[#FBD784] font-medium hover:underline"
-                >read more
-              </a>
-              <img
-                src="/images/arrow.png"
-                alt=""
-                class="self-center h-full mt-6"
-              />
+                class="text-[#FBD784] font-medium hover:underline text-sm md:text-base"
+                >read more</a
+              >
+              <img src="/images/arrow.png" class="w-4 h-4" />
             </div>
           </div>
         </div>
 
         <div
-          class="grid md:grid-cols-2 gap-28 items-center relative"
+          class="grid lg:grid-cols-2 gap-8 lg:gap-28 items-center section-card"
           data-aos="fade-up"
+          data-section="3"
         >
-          <div class="relative left-16" data-aos="fade-right">
+          <div class="order-2 lg:order-1 text-center lg:text-left">
             <span
-              class="absolute top-[-8rem] left-[-5rem] text-[10rem] font-bold text-gray-600/20 select-none"
+              class="hidden lg:block absolute text-6xl md:text-8xl lg:text-[10rem] font-bold text-gray-600/20 select-none -mt-16 lg:-mt-32 -ml-8 lg:-ml-20"
               >03</span
             >
-            <div class="flex gap-2">
-              <hr class="bg-[#FBD784] w-16 h-0.5 self-center" />
+
+            <div
+              class="flex items-center justify-center lg:justify-start gap-2 mb-4"
+            >
+              <hr class="bg-[#FBD784] w-8 md:w-12 lg:w-16 h-0.5" />
               <p
-                class="text-[#FBD784] uppercase tracking-widest text-sm font-semibold"
+                class="text-[#FBD784] uppercase tracking-widest text-xs md:text-sm font-semibold"
               >
                 Where you go is the key
               </p>
             </div>
-            <h2 class="text-3xl md:text-4xl font-bold mt-2 font-chronicle">
+
+            <h2
+              class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 font-chronicle"
+            >
               Understand Your Map & Timing
             </h2>
-            <p class="mt-4 text-gray-300 leading-relaxed">
+
+            <p class="text-gray-300 leading-relaxed mb-6 text-sm md:text-base">
               To start, print out the hiking guide and map. If it's raining,
               throw them in a Zip-Lock bag. Read over the guide, study the map,
               and have a good idea of what to expect. I like to know what my
               next landmark is as I hike. For example, I'll read the guide and
-              know that say, in a mile, I make a right turn at the junction..
+              know that say, in a mile, I make a right turn at the junction.
             </p>
-            <div class="flex items-center w-full h-full gap-4">
+
+            <div
+              class="flex items-center justify-center lg:justify-start gap-2"
+            >
               <a
                 href="#"
-                class="mt-6 inline-block text-[#FBD784] font-medium hover:underline"
-                >read more
-              </a>
-              <img
-                src="/images/arrow.png"
-                alt=""
-                class="self-center h-full mt-6"
-              />
+                class="text-[#FBD784] font-medium hover:underline text-sm md:text-base"
+                >read more</a
+              >
+              <img src="/images/arrow.png" class="w-4 h-4" />
             </div>
           </div>
 
-          <div class="relative w-[466px] h-[550px]" data-aos="fade-left">
-            <img
-              src="/images/3.svg"
-              alt="Map"
-              class="shadow-lg w-full h-full object-cover"
-            />
+          <div
+            class="order-1 lg:order-2 flex justify-center"
+            data-aos="fade-left"
+          >
+            <div class="w-full max-w-md lg:max-w-lg">
+              <img src="/images/3.svg" class="w-full h-auto shadow-lg" />
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <footer class="bg-[#0B1D26] text-gray-300 py-12 mt-20">
-      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-[20rem]">
-        <div>
-          <h2 class="text-white font-chronicle font-bold text-lg">MNTN</h2>
-          <p class="mt-3 text-sm leading-relaxed max-w-xs">
-            Get out there & discover your next <br />
-            slope, mountain & destination!
-          </p>
-          <p class="mt-6 text-xs text-gray-400">
-            Copyright 2019 MNTN, Inc. Terms & Privacy
-          </p>
-        </div>
-
-        <div class="grid grid-cols-2 gap-12 justify-end">
-          <div>
-            <h3 class="text-[#FBD784] font-semibold text-sm uppercase">
-              More on The Blog
-            </h3>
-            <ul class="mt-4 space-y-3">
-              <li>
-                <a href="#" class="hover:text-[#FBD784] transition"
-                  >About MNTN</a
-                >
-              </li>
-              <li>
-                <a href="#" class="hover:text-[#FBD784] transition"
-                  >Contributors & Writers</a
-                >
-              </li>
-              <li>
-                <a href="#" class="hover:text-[#FBD784] transition"
-                  >Write For Us</a
-                >
-              </li>
-              <li>
-                <a href="#" class="hover:text-[#FBD784] transition"
-                  >Contact Us</a
-                >
-              </li>
-              <li>
-                <a href="#" class="hover:text-[#FBD784] transition"
-                  >Privacy Policy</a
-                >
-              </li>
-            </ul>
+    <footer
+      class="bg-[#0B1D26] text-gray-300 py-8 md:py-12 px-4 md:px-6 lg:px-12 mt-8 md:mt-20"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-16 lg:gap-32">
+          <div class="text-center md:text-left">
+            <h2 class="text-white font-chronicle font-bold text-lg md:text-xl">
+              MNTN
+            </h2>
+            <p class="mt-3 text-sm leading-relaxed">
+              Get out there & discover your next<br class="hidden sm:block" />
+              slope, mountain & destination!
+            </p>
+            <p class="mt-6 text-xs text-gray-400">
+              Copyright 2019 MNTN, Inc. Terms & Privacy
+            </p>
           </div>
 
-          <div>
-            <h3 class="text-[#FBD784] font-semibold text-sm uppercase">
-              More on MNTN
-            </h3>
-            <ul class="mt-4 space-y-3">
-              <li>
-                <a href="#" class="hover:text-[#FBD784] transition">The Team</a>
-              </li>
-              <li>
-                <a href="#" class="hover:text-[#FBD784] transition">Jobs</a>
-              </li>
-              <li>
-                <a href="#" class="hover:text-[#FBD784] transition">Press</a>
-              </li>
-            </ul>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-center md:text-left"
+          >
+            <div>
+              <h3 class="text-[#FBD784] font-semibold text-sm uppercase mb-4">
+                More on The Blog
+              </h3>
+              <ul class="space-y-3 text-sm">
+                <li>
+                  <a href="#" class="hover:text-[#FBD784] transition"
+                    >About MNTN</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-[#FBD784] transition"
+                    >Contributors & Writers</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-[#FBD784] transition"
+                    >Write For Us</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-[#FBD784] transition"
+                    >Contact Us</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-[#FBD784] transition"
+                    >Privacy Policy</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-[#FBD784] font-semibold text-sm uppercase mb-4">
+                More on MNTN
+              </h3>
+              <ul class="space-y-3 text-sm">
+                <li>
+                  <a href="#" class="hover:text-[#FBD784] transition"
+                    >The Team</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-[#FBD784] transition">Jobs</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-[#FBD784] transition">Press</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
   </body>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  </script>
 </html>
